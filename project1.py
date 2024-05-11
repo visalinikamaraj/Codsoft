@@ -5,6 +5,7 @@ def get_from_file(a):
         
 
 def put_into_file(a):
+
    with open(a,'w')as file:
     file.writelines(todos)
      
