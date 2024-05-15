@@ -1,54 +1,29 @@
-contact = {}
+import random
+letters = [chr(v) for v in range(ord('a'), ord('a') + 26)]
+numbers = ['0','1','2','3','4','5','6','7','8','9']
+symbols = ['!','@','#','$','%','^','&','*','(',')']
+print ("welcome to password generator")
+n_letters = int(input("how many letters?\n"))
+n_symbols = int(input("how many symbols?\n"))
+n_numbers = int(input("how many numbers?\n"))
+password_list=[]
 
-def display_contact():
-    print("name\t\tcontact")
-    for key in contact:
-        print("{}\t\t{}.format(key,contact>get(key))")
+for i in range(1,n_letters+1):
+    char = random.choice(letters)
+    password_list+= char
 
+for i in range(1,n_symbols+1):
+    char = random.choice(numbers)
+    password_list += char
 
+for i in range(1,n_numbers+1):
+    char = random.choice(symbols)
+    password_list += char        
+  
+random.shuffle(password_list)
 
-while True:
-    choice= int(input("1.add new contact\n2.search contact\n3.display contact\n4.edit contact\n5.delete contact\n6.exit"))
+password = ""
+for i in password_list:
+    password += i
 
-    if choice == 1:
-        name= input("enter the contact name")
-        phone= input("enter the mobile number")
-        contact[name]=phone
-
-    elif choice == 2:
-        search_name= input ("enter the contact name")
-        if search_name in contact:
-            print(search_name,"'s contact number is ",contact[search_name])
-        else:
-            print("name is not found ")
-
-    elif choice == 3:
-        if not contact:
-            print("empty contact book")
-        else:
-            display_contact()     
-
-    elif choice == 4:
-        edit_contact=input("enter the contact name you want to edit:")
-        if edit_contact in contact:
-            phone = input("enter the mobile number")
-            contact[edit_contact]=phone
-            print("contact updated")
-            display_contact()
-        else:
-            print("not fount")
-
-    elif choice == 5:
-        delete_contact=input("enter the contact name you want to delete")
-        if delete_contact in contact:
-            confirm = input("do you want to delete this contact y/n?")
-            if confirm =='y' or confirm =='Y':
-                contact.pop(delete_contact)
-
-            display_contact()
-        else:
-            print("name is notb found in contact book")
-    else:
-        break
-
-print("quit")                     
+print("suggested password is:",password)    
