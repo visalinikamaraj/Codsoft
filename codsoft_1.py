@@ -11,11 +11,15 @@ def put_into_file(a):
      
    
 while (True):
-    user_option=input("ADD:SHOW:REPLACE:COMPLETE:EXIT:")
+    print("CREATE")
+    print("UPDATE")
+    print("COMPLETE")
+    print("SHOW")
+    print("EXIT")
+    user_option=input("enter your choice:")     #Like  create wakeup early in the  morning 
     
-    
-    if 'add' in user_option:
-        todo=user_option[4:]+"\n"
+    if 'create' in user_option:
+        todo=user_option[7:]+"\n"
         todos.append(todo)
         put_into_file("list.txt")
    
@@ -26,13 +30,13 @@ while (True):
         new_todos=[item.strip('\n')for item in todos ]
 
         for index,item in enumerate(new_todos):
-            myitem=f"{index+1}---{item}"
+            myitem=f"{index+1}-{item}"
             print(myitem)
 
 
-    elif 'replace' in user_option:
+    elif 'update' in user_option:
      try:
-        lastindex=int(user_option[8:])
+        lastindex=int(user_option[7:])
         lastindex=lastindex-1
 
         replaceditem=input("newone:")
@@ -58,6 +62,5 @@ while (True):
     
     else:
         print("invalid option")   
-        user_option=input("ADD\tSHOW\tREPLACE\tCOMPLETE\tEXIT:")
-                
+        user_option=input("enter your choice:")  
 print("quit")                    
