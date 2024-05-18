@@ -6,7 +6,7 @@ def get_from_file(a):
 
 def put_into_file(a):
 
-   with open(a,'w')as file:
+   with open(a,"w")as file:
     file.writelines(todos)
      
    
@@ -51,7 +51,7 @@ while (True):
         removeindex=int(user_option[9:])
         todos.pop(removeindex-1)
         put_into_file("list.txt")
-        print(todos)    
+       
      except Exception as e:
         print (e)               
         
