@@ -1,4 +1,4 @@
-print("select the operation you want ton perform:")
+print("select the operation you want to perform:")
 print("1.ADD")
 print("2.SUBTRACT")
 print("3.MULTIPLY")
@@ -27,7 +27,7 @@ def division():
 
 
 while (True):
-    operation= int(input("enter the operation"))
+    operation= int(input("enter the operation:"))
 
 
     if operation == 1:
@@ -44,6 +44,6 @@ while (True):
        print(answer)
     else :
        print("invalid")
+       print("please enter a valid opration")
 
-print("done")       
 
